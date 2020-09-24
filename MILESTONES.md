@@ -1,26 +1,29 @@
 Add entries to this file summarising each project milestone. Don't forget that these need to have been discussed with your TA before the milestone deadline; also, remember to commit and push them by then!
 
-MILESTONE 2
-Roadmap is here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/15
-Assignment of tasks is attached to each issue, as listed here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues
+# MILESTONE 2
+## Roadmap
+linked here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/15
 
-Summary of Progress:
-COMPLETED:
+## Assignment of tasks 
+attached to each issue, as listed here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues
+
+## Summary of Progress:
+### COMPLETED:
 - we have defined a general idea of what our DSL will do and what it will look like
 - we've laid out a roadmap as linked above and divided our current tasks
-IN PROGRESS:
+### IN PROGRESS:
 - first user study will be done in class on Thurs Sept 24
 - we are designing our EBNF (aiming to finish by Fri Sept 25)
 - we are collecting clip art to use in the gifs
-TODO:
+### TODO:
 - see open issues here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues
 
 
-MILESTONE 1
+# MILESTONE 1
 
-Project: Gif Comic DSL
+## Project: Gif Comic DSL
 
-BRIEF DESCRIPTION
+## BRIEF DESCRIPTION
 
 1. Users can choose from a Library of images to refer to as objects (primitive constants?)
 
@@ -53,10 +56,10 @@ Use Case: Digital gif comic book creation to tell a story/create art
 
 User Group: General population (whoever wishes to create a gif comic)
 
-NOTES OF ANY IMPORTANT CHANGES/FEEDBACK FROM TA DISCUSSION
+## NOTES OF ANY IMPORTANT CHANGES/FEEDBACK FROM TA DISCUSSION
 
   TA suggests that this idea has less of a “form” format than all our other ideas and would be easier to extend for user creativity. He also mentioned that having a well defined use case / user group would help in the further development of the DSL.
 
-ANY PLANNED FOLLOW-UP TASKS OR FEATURES STILL TO DESIGN
+## ANY PLANNED FOLLOW-UP TASKS OR FEATURES STILL TO DESIGN
 
   Nothing as of right now, just the next milestone
