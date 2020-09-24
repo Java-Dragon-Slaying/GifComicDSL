@@ -1,6 +1,20 @@
 Add entries to this file summarising each project milestone. Don't forget that these need to have been discussed with your TA before the milestone deadline; also, remember to commit and push them by then!
 
 MILESTONE 2
+Roadmap is here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/15
+Assignment of tasks is attached to each issue, as listed here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues
+
+Summary of Progress:
+COMPLETED:
+- we have defined a general idea of what our DSL will do and what it will look like
+- we've laid out a roadmap as linked above and divided our current tasks
+IN PROGRESS:
+- first user study will be done in class on Thurs Sept 24
+- we are designing our EBNF (aiming to finish by Fri Sept 25)
+- we are collecting clip art to use in the gifs
+TODO:
+- see open issues here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues
+
 
 MILESTONE 1
 
