@@ -12,9 +12,10 @@ attached to each issue, as listed here: https://github.students.cs.ubc.ca/cpsc41
 - we have defined a general idea of what our DSL will do and what it will look like
 - we've laid out a roadmap as linked above and divided our current tasks
 ### IN PROGRESS:
-- first user study will be done in class on Thurs Sept 24
+- we are each running a first user study and will compile the 5 sets of feedback after Mon Sept 28
 - we are designing our EBNF (aiming to finish by Fri Sept 25)
 - we are collecting clip art to use in the gifs
+- we're building the file structure for our code base (we have a main class and will add more components after the user study)
 ### TODO:
 - see open issues here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues
 
