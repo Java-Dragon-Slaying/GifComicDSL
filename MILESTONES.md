@@ -13,7 +13,7 @@ attached to each issue, as listed here: https://github.students.cs.ubc.ca/cpsc41
 - we've laid out a roadmap as linked above and divided our current tasks
 ### IN PROGRESS:
 - we are each running a first user study and will compile the 5 sets of feedback after Mon Sept 28
-- we are designing our EBNF (aiming to finish by Fri Sept 25)
+- we are finishing the design of our EBNF (meeting Fri Sept 25)
 - we are collecting clip art to use in the gifs
 - we're building the file structure for our code base (we have a main class and will add more components after the user study)
 ### TODO:
