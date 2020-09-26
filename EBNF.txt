@@ -1,0 +1,37 @@
+EBNF ===============================
+
+PROGRAM ::= “comic” NAME “{“ LINE+  “}”
+LINE ::= “{create” (IMAGE | PANEL) “}”
+IMAGE ::= “image” NAME “from” SOURCE
+TEXT::= “text” (\w)+ (“fontsize” NUM)?
+NAME::= (\w)+
+SOURCE ::= “tall_guy” | “basketball” | <other elements of enum> // these are elements of the image filepath enum
+PANEL::= “panel” POSITION “background” NAME (TEXT)? ADD (ADD | MOVE | REMOVE)* // whitespace will be removed during tokenization
+ADD ::= “add” NAME POSITION (“AND” ADD)*
+MOVE ::= MOVEMENT NAME POSITION (“AND” MOVE)*
+MOVEMENT::= “move” | “jump” | “run” <add more movements if we have time???>
+REMOVE ::= “remove” NAME
+POSITION::= (NUM, NUM) 
+NUM::=[0-9]+
+
+
+SAMPLE INPUT ===============================
+
+comic my_comic {
+  {create image astro from tall_guy}
+  {create image bill from ‘~/desktop/bill_img.png’}
+  {create image classroom from class_room}
+  {create movement jump_high xxxx} 
+  {create panel (0, 0)
+    background classroom
+    text whatssupp 
+    add astro (10, 10)
+    add bill (30,10)
+    move astro (20, 10)
+    move astro (30, 10) AND move bill (10, 10)
+    remove bill}
+  {create panel (200, 0) background galaxy}
+}
+
+
+
