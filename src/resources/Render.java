@@ -8,6 +8,7 @@ public class Render {
 
     // class for rendering the comic! iterate through the panels and then return a list of GIFs
     public List<Object> renderComic(GifComicProgram myComic) {
+
         return new ArrayList<Object>();
     }
 

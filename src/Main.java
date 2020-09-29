@@ -8,6 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("initialized"); // replace with proper logging statements?
+
+        // read config...
+
         System.out.println("args are: " + args[0] + " " + args[1]);
 
         String input_file = args[0]; // read file specified in args

@@ -1,5 +1,5 @@
 package entities;
 
-public class MoveImage extends Line {
+public class MoveImage extends PanelStep {
     Coordinate movement;
 }

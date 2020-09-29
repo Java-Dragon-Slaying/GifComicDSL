@@ -2,7 +2,6 @@ package entities;
 
 import java.util.List;
 
-public class Line {
+public class PanelStep {
     String imageName;
-
 }

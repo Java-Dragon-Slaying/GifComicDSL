@@ -1,5 +1,5 @@
 package entities;
 
-public class AddImage extends Line {
+public class AddImage extends PanelStep {
     Coordinate position;
 }
