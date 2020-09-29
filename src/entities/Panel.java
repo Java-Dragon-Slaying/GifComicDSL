@@ -19,6 +19,15 @@ public class Panel {
         this.stepList = stepList;
     }
 
-    // todo - setter methods for optional fields like text, textPosition, fontsize, or any additional ones added.
+    public void setText(String text) {
+        this.text = text;
+    }
 
+    public void setCoordinate (Coordinate textPosition) {
+        this.textPosition = textPosition;
+    }
+
+    public void setFontSize(Integer fontSize) {
+        this.fontSize = fontSize;
+    }
 }
