@@ -19,9 +19,8 @@ SAMPLE INPUT ===============================
 
 comic my_comic {
   {create image astro from tall_guy}
-  {create image bill from ‘~/desktop/bill_img.png’}
+  {create image bill from tall_guy}
   {create image classroom from class_room}
-  {create movement jump_high xxxx} 
   {create panel (0, 0)
     background classroom
     text whatssupp 
