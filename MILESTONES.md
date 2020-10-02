@@ -1,5 +1,9 @@
 Add entries to this file summarising each project milestone. Don't forget that these need to have been discussed with your TA before the milestone deadline; also, remember to commit and push them by then!
 
+# MILESTONE 3
+- Notes from the first user study and design changes are in "User Study 1.txt"
+- EBNF and sample input are in "EBNF.txt"
+
 # MILESTONE 2
 ## Roadmap
 linked here: https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/15
