@@ -1,6 +1,7 @@
 Feedback from user studies:
 - {} around commands is cumbersome
 - "create image" NAME "from" SOURCE is confusing. Does this actually create a new image? Is this a custom image that gets renamed?
+- can we put the variable names in quotes but call them without quotes?
 - what is SOURCE and how do I know what is valid here?
 - how is the end of the header text known? Is everything between "text" and "fontsize" taken as the header?
 - what happens if images are added before they are defined? This looks valid but will the DSL crash?
@@ -10,19 +11,14 @@ Feedback from TA:
 - good that we have variables and EBNF sketched out
 
 Changes based on above feedback:
-- we are going to remove the required {} and replace them with one of the following:
-    a) "comic <name>: ..." instead of "comic <name> { ... }"
-    b) change {} around create statements to an ending ;
-    c) remove {} entirely (don't replace them with anything).
-        This could be the easiest way to go since {}:; are not going to be saved after tokenization anyways.
+- we are going to remove the required {} and replace them with the following:
+    a) change {} around create statements to an optional ending ;
+    b) add optional , after position when adding images to a panel
 - we intended our image create statements to act as variable assignments. NAME is the variable name and SOURCE is an enum element of pre-defined images.
-    We're considering a couple of different keywords to replace "create", the top ones so far are "use" and "import" (so the command would be "use/import SOURCE as NAME")
+    We're changing the syntax to "use image" SOURCE "as" NAME instead of using "create" as the keyword.
 - SOURCE is an enum of pre-defined images that users can call using the string representation of the image path.
-    We are still compiling these images in the repo so we haven't made the enum yet. The list of all available images will be on the wiki/docs when it's ready
-- We are going to require quotes around the header text so it is easier to differentiate the user's text and the following commands.
+    We are still compiling these images in the repo so we haven't made the enum yet. The list of all available images will be on the EBNF/wiki/docs when it's ready
+- we are going to require quotes around the header text so it is easier to differentiate the user's text and the following commands.
     "fontsize" is optional so using it to end the user's header wouldn't work if the user decides not to define the font size
-- Disallowing images to be added to a panel before the image is named will require extra work in the backend to implement.
-    We haven't yet decided exactly how we're going to go about this but we're considering adding checks in the parser or validator to make sure the name has been defined.
-
-- we could add loops to allow some image movements to repeat (ex. guy pacing back and forth)
-- we could add conditionals to only allow certain movements if conditions are met (ex. walk if no other objects in the path, otherwise jump over them)
+- disallowing images to be added to a panel before the image is named will be implemented in the validator.
+- there are no clear use cases for looping or conditional logic in our problem domain. We can consider adding them later if we have a lot of extra time...
