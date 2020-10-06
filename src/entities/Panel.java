@@ -23,11 +23,23 @@ public class Panel {
         this.text = text;
     }
 
-    public void setCoordinate (Coordinate textPosition) {
+    public void setCoordinate(Coordinate textPosition) {
         this.textPosition = textPosition;
     }
 
     public void setFontSize(Integer fontSize) {
         this.fontSize = fontSize;
+    }
+
+    public String getText() {
+        return this.text;
+    }
+
+    public Coordinate getCoordinate() {
+        return this.textPosition;
+    }
+
+    public Integer getFontSize() {
+        return this.fontSize;
     }
 }
