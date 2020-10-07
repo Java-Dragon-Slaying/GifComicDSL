@@ -8,8 +8,7 @@ import java.util.logging.Logger;
 public class Main {
     public static void main(String[] args) {
 
-//        List<String> fixedLiterals = Arrays.asList("create", "use", "background", "text", "fontsize", "add", "move", "remove", "AND");
-        Tokenizer tokenizer = SimpleTokenizer.createSimpleTokenizer("input.tvar");
+        Tokenizer tokenizer = Tokenizer.createSimpleTokenizer("input.tvar");
         System.out.println("Done tokenizing");
 
 //        System.out.println("initialized"); // replace with proper logging statements?
