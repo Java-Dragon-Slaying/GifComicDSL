@@ -1,16 +1,15 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class GifComicProgram {
 //    public static String name;
     HashMap<String, Image> imageMap; // maybe can get rid of image and reference a ImageBuffer directly?
                                      // using strings for image reference will require unique image names
-    List<Panel> panelList;
+    ArrayList<PanelStep> panelStepList;
 
-//    public GifComicProgram(String name) {
-//        this.name = name;
-//    }
-    public GifComicProgram() {}
+    public GifComicProgram(ArrayList<PanelStep> panelStepList) {
+        this.panelStepList = panelStepList;
+    }
 }

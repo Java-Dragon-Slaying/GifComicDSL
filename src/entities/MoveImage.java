@@ -1,10 +1,11 @@
 package entities;
 
 public class MoveImage extends PanelStep {
-    Coordinate movement;
+    String name;
+    Coordinate position;
 
-    public MoveImage(String imageName, Coordinate movement) {
-        super(imageName);
-        this.movement = movement;
+    public MoveImage(String imageName, Coordinate position) {
+        this.name = imageName;
+        this.position = position;
     }
 }

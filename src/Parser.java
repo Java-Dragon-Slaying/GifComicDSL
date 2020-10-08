@@ -1,4 +1,7 @@
 import entities.GifComicProgram;
+import entities.PanelStep;
+
+import java.util.ArrayList;
 
 public class Parser {
     private final Tokenizer tokenizer;
@@ -11,7 +14,11 @@ public class Parser {
 
 //    PROGRAM ::= “comic” NAME ITEM+
     public GifComicProgram parseProgram() {
-        return new GifComicProgram();
+        ArrayList<PanelStep> panelSteps = new ArrayList<>();
+        while(tokenizer.moreTokens()) {
+//            panelSteps.add(parsePanelStep());
+        }
+        return new GifComicProgram(panelSteps);
     }
 
 //    ITEM ::= (“use” IMAGE | "create" PANEL) (";")?
