@@ -1,3 +1,4 @@
+import entities.GifComicProgram;
 import resources.Render;
 
 public class Main {
@@ -15,8 +16,9 @@ public class Main {
         // not sure how these should be called, or where to read the file into a string. Tokenizer would be responsible
         // for stripping newlines? should parser take a tokenizer as an argument?
         String input_string = "";
-        Tokenizer tokenizer = Tokenizer.createSimpleTokenizer("input.tvar");
-        Parser parser = Parser.createParser(tokenizer);
+        Tokenizer tokenizer = new Tokenizer("input.tvar");
+        Parser parser = new Parser(tokenizer);
+        GifComicProgram program = parser.parseProgram();
 
         Render render = new Render();
 

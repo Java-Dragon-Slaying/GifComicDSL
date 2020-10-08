@@ -1,19 +1,19 @@
-
+import entities.GifComicProgram;
 
 public class Parser {
     private final Tokenizer tokenizer;
     private final String NAME = "[A-Za-z]+";
     private final String NUM = "[0-9]+";
 
-    public static Parser createParser(Tokenizer tokenizer) {
-        return new Parser(tokenizer);
-    }
-
-    private Parser(Tokenizer tokenizer) {
+    public Parser(Tokenizer tokenizer) {
         this.tokenizer = tokenizer;
     }
 
 //    PROGRAM ::= “comic” NAME ITEM+
+    public GifComicProgram parseProgram() {
+        return new GifComicProgram();
+    }
+
 //    ITEM ::= (“use” IMAGE | "create" PANEL) (";")?
 //    IMAGE ::= “image” SOURCE “as” NAME
 //    SOURCE ::= “tall_guy” | “basketball” | <other elements of enum>
