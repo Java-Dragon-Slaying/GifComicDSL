@@ -31,7 +31,7 @@ public class Tokenizer  {
         //1. Read the whole program into a single string; kill the newlines
         String tokenizedProgram = inputProgram.replace("\n", "");
         //2. Split the tokens
-        tokens = tokenizedProgram.split("\\s+");
+        tokens = tokenizedProgram.split("\\s+(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)");
 
         //3. Remove the quote and ending comma and semicolon
         for (int i = 0; i < tokens.length; i++) {
