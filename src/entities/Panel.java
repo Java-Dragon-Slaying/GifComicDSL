@@ -1,5 +1,7 @@
 package entities;
 
+import ast.PanelStep;
+
 import java.util.List;
 
 public class Panel {

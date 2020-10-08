@@ -1,5 +1,7 @@
 package entities;
 
+import ast.Statement;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 

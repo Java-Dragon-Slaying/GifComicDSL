@@ -1,4 +1,6 @@
-package entities;
+package ast;
+
+import entities.Coordinate;
 
 public class AddImage extends PanelStep {
     String name;

@@ -1,4 +1,6 @@
-package entities;
+package ast;
+
+import entities.Coordinate;
 
 public class MoveImage extends PanelStep {
     String name;

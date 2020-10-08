@@ -1,5 +1,5 @@
 import entities.GifComicProgram;
-import entities.Statement;
+import ast.Statement;
 
 import java.util.ArrayList;
 
@@ -15,13 +15,17 @@ public class Parser {
     //PROGRAM ::= “comic” NAME ITEM+
     public GifComicProgram parseProgram() {
         ArrayList<Statement> statements = new ArrayList<>();
+        tokenizer.getAndCheckNext("comic");
+        tokenizer.getAndCheckNext(NAME);
         while(tokenizer.moreTokens()) {
-//            statements.add(parseStatement());
+            statements.add(parseStatement());
         }
         return new GifComicProgram(statements);
     }
 
-//    private Statement parseStatement() { }
+    private Statement parseStatement() {
+        if (tokenizer.checkToken())
+    }
 
 
 //    ITEM ::= (“use” IMAGE | "create" PANEL) (";")?
