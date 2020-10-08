@@ -1,5 +1,5 @@
 import entities.GifComicProgram;
-import entities.PanelStep;
+import entities.Statement;
 
 import java.util.ArrayList;
 
@@ -12,14 +12,17 @@ public class Parser {
         this.tokenizer = tokenizer;
     }
 
-//    PROGRAM ::= “comic” NAME ITEM+
+    //PROGRAM ::= “comic” NAME ITEM+
     public GifComicProgram parseProgram() {
-        ArrayList<PanelStep> panelSteps = new ArrayList<>();
+        ArrayList<Statement> statements = new ArrayList<>();
         while(tokenizer.moreTokens()) {
-//            panelSteps.add(parsePanelStep());
+//            statements.add(parseStatement());
         }
-        return new GifComicProgram(panelSteps);
+        return new GifComicProgram(statements);
     }
+
+//    private Statement parseStatement() { }
+
 
 //    ITEM ::= (“use” IMAGE | "create" PANEL) (";")?
 //    IMAGE ::= “image” SOURCE “as” NAME

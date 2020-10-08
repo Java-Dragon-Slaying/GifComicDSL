@@ -7,9 +7,9 @@ public class GifComicProgram {
 //    public static String name;
     HashMap<String, Image> imageMap; // maybe can get rid of image and reference a ImageBuffer directly?
                                      // using strings for image reference will require unique image names
-    ArrayList<PanelStep> panelStepList;
+    ArrayList<Statement> statements;
 
-    public GifComicProgram(ArrayList<PanelStep> panelStepList) {
-        this.panelStepList = panelStepList;
+    public GifComicProgram(ArrayList<Statement> statements) {
+        this.statements = statements;
     }
 }
