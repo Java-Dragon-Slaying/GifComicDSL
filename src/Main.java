@@ -1,8 +1,4 @@
-import entities.GifComicProgram;
 import resources.Render;
-
-import java.util.List;
-import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,16 +15,14 @@ public class Main {
         // not sure how these should be called, or where to read the file into a string. Tokenizer would be responsible
         // for stripping newlines? should parser take a tokenizer as an argument?
         String input_string = "";
-        Tokenizer tokenizer = new Tokenizer();
-        Parser parser = new Parser();
-
-        GifComicProgram myComic = parser.parseGifComicProgram(input_string);
+        Tokenizer tokenizer = Tokenizer.createSimpleTokenizer("input.tvar");
+        Parser parser = Parser.createParser(tokenizer);
 
         Render render = new Render();
 
-        List<Object> output = render.renderComic(myComic); // change from object when we know appropriate types
+        // List<Object> output = render.renderComic(myComic); // change from object when we know appropriate types
 
-        render.renderHtml(GifComicProgram.name, output_filepath, output);
+        // render.renderHtml(GifComicProgram.name, output_filepath, output);
 
     }
 }
