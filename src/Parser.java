@@ -37,7 +37,8 @@ public class Parser {
         } else if (tokenizer.checkToken("create")) {
             return parseCreatePanel();
         } else {
-            throw new InvalidParameterException("PARSER: unknown statement with token " + tokenizer.getNext());
+            //  TODO: change this to custom exception after implementing validator
+            throw new InvalidParameterException("PARSER: unknown statement starting with token " + tokenizer.getNext());
         }
     }
 
@@ -63,16 +64,16 @@ public class Parser {
             return parseCreateTextPanel(position, background);
         }
         ArrayList<ArrayList<PanelStep>> panelSteps = new ArrayList<>();
-        while (tokenizer.checkToken("add") || tokenizer.checkToken("move") || tokenizer.checkToken("remove")) {
+        while (tokenizer.checkToken("add") || tokenizer.checkToken(MOVEMENTS) || tokenizer.checkToken("remove")) {
             if (tokenizer.checkToken("add")) {
                 panelSteps.add(parseAddImages());
-            } else if (tokenizer.checkToken("move")) {
+            } else if (tokenizer.checkToken(MOVEMENTS)) {
                 panelSteps.add(parseMoveImages());
             } else {
                 panelSteps.add(parseRemoveImage());
             }
         }
-        // text, fontsize default values (weren't given by user)
+        // text, fontsize are default values (weren't given by user)
         return new CreatePanel(position, background, "", 0, panelSteps);
     }
 
