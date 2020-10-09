@@ -6,8 +6,8 @@ public class AddImage extends PanelStep {
     String name;
     Coordinate position;
 
-    public AddImage(String imageName, Coordinate position) {
+    public AddImage(String imageName, String position) {
         this.name = imageName;
-        this.position = position;
+        this.position = new Coordinate(position);
     }
 }

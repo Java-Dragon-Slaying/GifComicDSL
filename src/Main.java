@@ -3,7 +3,6 @@ import resources.Render;
 
 public class Main {
     public static void main(String[] args) {
-
         System.out.println("initialized"); // replace with proper logging statements?
 
         // read config...
@@ -25,6 +24,5 @@ public class Main {
         // List<Object> output = render.renderComic(myComic); // change from object when we know appropriate types
 
         // render.renderHtml(GifComicProgram.name, output_filepath, output);
-
     }
 }

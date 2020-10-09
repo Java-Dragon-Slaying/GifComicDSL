@@ -1,6 +1,6 @@
 package ast;
 
-public class CreateImage {
+public class CreateImage extends Statement {
     String source;
     String name;
 
