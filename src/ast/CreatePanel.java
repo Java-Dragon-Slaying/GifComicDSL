@@ -9,10 +9,10 @@ public class CreatePanel extends Statement {
     String background;
     String text;
     Integer fontsize;
-    ArrayList<PanelStep> panelSteps;
+    ArrayList<ArrayList<PanelStep>> panelSteps;
 
     public CreatePanel(String coordinate, String background, String text, Integer fontsize,
-                       ArrayList<PanelStep> panelSteps) {
+                       ArrayList<ArrayList<PanelStep>>  panelSteps) {
         this.coordinate = new Coordinate(coordinate);
         this.background = background;
         this.text = text;

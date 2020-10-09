@@ -80,7 +80,7 @@ public class Parser {
         Integer fontsize = 0;
         if (tokenizer.checkToken("fontsize")) {
             tokenizer.getNext();
-            fontsize = tokenizer.getAndCheckNext(NUM);
+            fontsize = Integer.parseInt(tokenizer.getAndCheckNext(NUM));
         }
         String text = tokenizer.getAndCheckNext("[\\w]*");
         ArrayList<ArrayList<PanelStep>> panelSteps = new ArrayList<>();
@@ -131,9 +131,11 @@ public class Parser {
     }
 
     // REMOVE ::= “remove” NAME (",")?
-    private RemoveImage parseRemoveImage() {
+    private ArrayList<PanelStep> parseRemoveImage() {
+        ArrayList<PanelStep> remove = new ArrayList<>();
         tokenizer.getNext(); // ignore "remove"
         String name = tokenizer.getAndCheckNext(NAME);
-        return new RemoveImage(name);
+        remove.add(new RemoveImage(name));
+        return remove;
     }
 }
