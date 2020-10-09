@@ -1,6 +1,9 @@
 package entities;
 
-public class Coordinate {
+import visitor.Acceptor;
+import visitor.GifComicVisitor;
+
+public class Coordinate extends Acceptor {
     int x;
     int y;
 
@@ -26,4 +29,8 @@ public class Coordinate {
         return this.y;
     }
 
+    @Override
+    public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
+        return v.visit(context,this);
+    }
 }

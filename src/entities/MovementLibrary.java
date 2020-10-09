@@ -1,8 +1,11 @@
 package entities;
 
+import visitor.Acceptor;
+import visitor.GifComicVisitor;
+
 import java.util.HashMap;
 
-public class MovementLibrary {
+public class MovementLibrary extends Acceptor {
     private final HashMap<String, String> movements; // right side links to movement code for rendering (update type)
 
     public MovementLibrary() {
@@ -23,5 +26,10 @@ public class MovementLibrary {
         regex = regex.substring(1);
         regex = "(" + regex + ")";
         return regex;
+    }
+
+    @Override
+    public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
+        return v.visit(context,this);
     }
 }

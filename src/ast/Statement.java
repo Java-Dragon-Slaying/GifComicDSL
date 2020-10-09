@@ -1,4 +1,6 @@
 package ast;
 
-public abstract class Statement {
+import visitor.Acceptor;
+
+public abstract class Statement extends Acceptor {
 }

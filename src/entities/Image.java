@@ -1,6 +1,9 @@
 package entities;
 
-public class Image {
+import visitor.Acceptor;
+import visitor.GifComicVisitor;
+
+public class Image extends Acceptor {
     String name;
     Coordinate position;
 
@@ -9,4 +12,8 @@ public class Image {
         this.position = position;
     }
 
+    @Override
+    public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
+        return v.visit(context,this);
+    }
 }
