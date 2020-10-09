@@ -1,7 +1,9 @@
-package entities;
+package ast;
 
 public class RemoveImage extends PanelStep{
+    String name;
+
     public RemoveImage(String imageName) {
-        super(imageName);
+        this.name = imageName;
     }
 }

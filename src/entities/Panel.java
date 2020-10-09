@@ -1,11 +1,13 @@
 package entities;
 
-import java.util.List;
+import ast.PanelStep;
+
+import java.util.ArrayList;
 
 public class Panel {
     Coordinate dimensions;
     Image background;
-    List<PanelStep> stepList;
+    ArrayList<ArrayList<PanelStep>>  stepList;
     String text;
     Coordinate textPosition; // maybe can provide a default value for this ?
     Integer fontSize; // should go in a config
@@ -13,7 +15,7 @@ public class Panel {
     // may need to store default text color here as well?
 
 
-    public Panel(Coordinate dimensions, Image background, List<PanelStep> stepList) {
+    public Panel(Coordinate dimensions, Image background, ArrayList<ArrayList<PanelStep>>  stepList) {
         this.dimensions = dimensions;
         this.background = background;
         this.stepList = stepList;
