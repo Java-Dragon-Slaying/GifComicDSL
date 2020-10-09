@@ -1,12 +1,10 @@
 package entities;
 
 import ast.PanelStep;
-import visitor.Acceptor;
-import visitor.GifComicVisitor;
 
 import java.util.ArrayList;
 
-public class Panel extends Acceptor {
+public class Panel {
     Coordinate dimensions;
     Image background;
     ArrayList<ArrayList<PanelStep>>  stepList;
@@ -45,10 +43,5 @@ public class Panel extends Acceptor {
 
     public Integer getFontSize() {
         return this.fontSize;
-    }
-
-    @Override
-    public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
-        return v.visit(context,this);
     }
 }

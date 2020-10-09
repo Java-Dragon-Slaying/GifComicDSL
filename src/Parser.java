@@ -1,5 +1,5 @@
 import ast.*;
-import entities.GifComicProgram;
+import ast.GifComicProgram;
 import entities.MovementLibrary;
 
 import java.security.InvalidParameterException;

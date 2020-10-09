@@ -1,4 +1,4 @@
-import entities.GifComicProgram;
+import ast.GifComicProgram;
 import resources.Render;
 
 public class Main {
