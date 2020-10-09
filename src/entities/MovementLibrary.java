@@ -9,8 +9,8 @@ public class MovementLibrary {
         this.movements = new HashMap<>();
 
         // need something in map to be able to run parser
-        movements.put("TEST", "test");
-        movements.put("TEST2", "test2");
+        movements.put("move", "test");
+        movements.put("run", "test2");
 
         // add actual movements here
     }

@@ -8,8 +8,9 @@ import java.util.ArrayList;
 public class Parser {
     private final Tokenizer tokenizer;
     private final String NAME = "[A-Za-z]+";
+    private final String VARNAME = "[A-Za-z_]+";
     private final String NUM = "[0-9]+";
-    private final String COORDINATE = "([0-9]+,[0-9]+)";
+    private final String COORDINATE = "\\([0-9]+,[0-9]+\\)";
     // MOVEMENT::= "move" | "jump" | "walk" | "run" | ... // these will be pre-defined actions
     private MovementLibrary m = new MovementLibrary();
     private final String MOVEMENTS = m.getMovementsRegex();
@@ -22,11 +23,11 @@ public class Parser {
     public GifComicProgram parseProgram() {
         ArrayList<Statement> statements = new ArrayList<>();
         tokenizer.getAndCheckNext("comic");
-        tokenizer.getAndCheckNext(NAME);
+        String name = tokenizer.getAndCheckNext(VARNAME);
         while (tokenizer.moreTokens()) {
             statements.add(parseStatement());
         }
-        return new GifComicProgram(statements);
+        return new GifComicProgram(name, statements);
     }
 
     //    ITEM ::= (“use” IMAGE | "create" PANEL) (";")? - semicolon not kept as token
@@ -43,8 +44,9 @@ public class Parser {
     // IMAGE ::= “image” SOURCE “as” NAME
     // SOURCE ::= “tall_guy” | “basketball” | <other elements in hashmap>
     private CreateImage parseCreateImage() {
+        tokenizer.getNext(); // ignore "use"
         tokenizer.getAndCheckNext("image");
-        String source = tokenizer.getAndCheckNext(NAME);
+        String source = tokenizer.getAndCheckNext(VARNAME);
         tokenizer.getAndCheckNext("as");
         String name = tokenizer.getAndCheckNext(NAME);
         return new CreateImage(source, name);
@@ -52,6 +54,7 @@ public class Parser {
 
     // PANEL::= “panel” POSITION “background” NAME (TEXT)? ADD (ADD | MOVE | REMOVE)*
     private CreatePanel parseCreatePanel() {
+        tokenizer.getNext(); // ignore "create"
         tokenizer.getAndCheckNext("panel");
         String position = tokenizer.getAndCheckNext(COORDINATE);
         tokenizer.getAndCheckNext("background");

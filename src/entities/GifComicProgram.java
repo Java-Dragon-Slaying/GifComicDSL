@@ -1,17 +1,30 @@
 package entities;
 
 import ast.Statement;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GifComicProgram {
-//    public static String name;
-    HashMap<String, Image> imageMap; // maybe can get rid of image and reference a ImageBuffer directly?
+    private String name;
+    private ArrayList<Statement> statements;
+    private HashMap<String, Image> imageMap; // maybe can get rid of image and reference a ImageBuffer directly?
                                      // using strings for image reference will require unique image names
-    ArrayList<Statement> statements;
 
-    public GifComicProgram(ArrayList<Statement> statements) {
+    public GifComicProgram(String name, ArrayList<Statement> statements) {
+        this.name = name;
         this.statements = statements;
+        this.imageMap = new HashMap<>();
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public ArrayList<Statement> getStatements() {
+        return this.statements;
+    }
+
+    public HashMap<String, Image> getImageMap() {
+        return this.imageMap;
     }
 }
