@@ -104,6 +104,7 @@ public class Parser {
         ArrayList<PanelStep> adds = new ArrayList<>();
         adds.add(parseAddSingleImage());
         while (tokenizer.checkToken("AND")) {
+            tokenizer.getNext(); // ignore "AND"
             adds.add(parseAddSingleImage());
         }
         return adds;
@@ -121,13 +122,14 @@ public class Parser {
         ArrayList<PanelStep> moves = new ArrayList<>();
         moves.add(parseMoveSingleImage());
         while (tokenizer.checkToken("AND")) {
+            tokenizer.getNext(); // ignore "AND"
             moves.add(parseMoveSingleImage());
         }
         return moves;
     }
 
     private MoveImage parseMoveSingleImage() {
-        String movement = tokenizer.getNext();
+        String movement = tokenizer.getAndCheckNext(MOVEMENTS);
         String name = tokenizer.getAndCheckNext(NAME);
         String position = tokenizer.getAndCheckNext(COORDINATE);
         return new MoveImage(movement, name, position);
