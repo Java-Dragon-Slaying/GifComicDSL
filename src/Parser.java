@@ -12,7 +12,7 @@ public class Parser {
     private final String NUM = "[0-9]+";
     private final String COORDINATE = "\\([0-9]+,[0-9]+\\)";
     // MOVEMENT::= "move" | "jump" | "walk" | "run" | ... // these will be pre-defined actions
-    private MovementLibrary m = new MovementLibrary();
+    private final MovementLibrary m = new MovementLibrary();
     private final String MOVEMENTS = m.getMovementsRegex();
 
     public Parser(Tokenizer tokenizer) {
