@@ -25,4 +25,5 @@ public class Coordinate {
     public Integer getY() {
         return this.y;
     }
+
 }

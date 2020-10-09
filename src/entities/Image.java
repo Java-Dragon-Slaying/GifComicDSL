@@ -8,4 +8,5 @@ public class Image {
         this.name = name;
         this.position = position;
     }
+
 }
