@@ -4,9 +4,10 @@ public class Coordinate {
     int x;
     int y;
 
-    public Coordinate(Integer x, Integer y) {
-        this.x = x;
-        this.y = y;
+    public Coordinate(String coordinate) {
+        String[] coordinates = coordinate.split("[\\(,\\)]");
+        this.x = Integer.parseInt(coordinates[1]);
+        this.y = Integer.parseInt(coordinates[2]);
     }
 
     public void setX(Integer x) {
