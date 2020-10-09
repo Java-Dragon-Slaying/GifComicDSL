@@ -4,23 +4,23 @@ Add entries to this file summarising each project milestone. Don't forget that t
 
 ## Status of implementation
 Completed issues:
-* [Milestone 2](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/15)
-* [UI Implementation Discussion](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/14)
-* [First User Study](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/9)
-* [General Framework of Project](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/7)
+* [Parser](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/6)
 * [Tokenizer](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/5)
-* [Sprint Planning Session 1](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/4)
+* [General Framework of Project](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/7)
+* [First User Study](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/9)
 * [EBNF](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/3)
+* [UI Implementation Discussion](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/14)
+    - We've decided not to go ahead with a UI since it is not required and could be a lot of work
+    - Our program will instead take a text file as input and create an html file to display the gifs
+* [Milestone 2](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/15)
+* [Sprint Planning Session 1](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/4)
 * [Brainstorm Functionality](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/2)
-
-      
 
 ## Plans for final user study
 Each group member will conduct their own user study and then mid-next week we will have a meeting to share our ideas.
 
 ## Planned timeline for the remaining days
 To be completed by October 12: 
-* [Parser](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/6)
 * [Validator](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/10)
 * [Animator](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/18)
 * [Renderer](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/17)
