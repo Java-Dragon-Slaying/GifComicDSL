@@ -1,7 +1,5 @@
 comic my_comic
-  use image tall_guy as "astrozhu";
-  use image tall_guy as "bill";
-  use image class_room as "classroom";
+  use image microphone as mic;
   create panel (0,0) background classroom text fontsize 20 "whatssupp"
     add astrozhu (10,10),
     add bill (30,10),
