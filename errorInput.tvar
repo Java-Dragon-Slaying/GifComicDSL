@@ -1,0 +1,24 @@
+comic my_comic
+  use image tall_guy as "astrozhu";
+  use image tall_guy as "bill";
+  use image class_room as "classroom";
+  create panel (100,100) background classroom text fontsize 20 "whatssupp"
+    add astrozhu (10,10),
+    add bill (30,10),
+    move astrozhu (20,10),
+    move astrozhu (30,10) AND move bill (10,10),
+    remove bill;
+  create panel (200,50) background classroom
+    add cheese (0,0),
+    add bill (30,10),
+    add astrozhu (50,20),
+    move bill (5,10),
+    move bill (1000,10),
+    move bill (20,2000),
+    move bill (30,10),
+    move bill (20,10),
+    remove bill,
+    move bill (30,10),
+    remove bill;
+
+

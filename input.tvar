@@ -1,11 +1,6 @@
 comic my_comic
   use image microphone as mic;
-  create panel (0,0) background classroom text fontsize 20 "whatssupp"
-    add astrozhu (10,10),
-    add bill (30,10),
-    move astro (20,10),
-    move astro (30,10) AND move bill (10,10),
-    remove bill;
-  create panel (200,0) background galaxy;
-
-
+  use image canada as flag;
+  create panel (100,100) background flag text fontsize 20 "whatssupp"
+    add mic (10,10),
+    move mic (20,10)

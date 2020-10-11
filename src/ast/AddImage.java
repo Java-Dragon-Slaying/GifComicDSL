@@ -12,6 +12,14 @@ public class AddImage extends PanelStep {
         this.position = new Coordinate(position);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Coordinate getPosition() {
+        return position;
+    }
+
     @Override
     public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
         return v.visit(context,this);
