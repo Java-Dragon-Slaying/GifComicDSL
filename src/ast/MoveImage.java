@@ -14,6 +14,18 @@ public class MoveImage extends PanelStep {
         this.position = new Coordinate(position);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Coordinate getPosition() {
+        return position;
+    }
+
+    public String getMovement() {
+        return movement;
+    }
+
     @Override
     public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
         return v.visit(context,this);

@@ -11,6 +11,10 @@ public class CreateImage extends Statement {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
         return v.visit(context,this);

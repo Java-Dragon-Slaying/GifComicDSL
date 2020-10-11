@@ -21,6 +21,26 @@ public class CreatePanel extends Statement {
         this.panelSteps = panelSteps;
     }
 
+    public ArrayList<ArrayList<PanelStep>> getPanelSteps() {
+        return panelSteps;
+    }
+
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public String getBackground() {
+        return background;
+    }
+
+    public Integer getFontsize() {
+        return fontsize;
+    }
+
+    public String getText() {
+        return text;
+    }
+
     @Override
     public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
         return v.visit(context,this);
