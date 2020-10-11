@@ -1,10 +1,13 @@
-package entities;
+package ast;
 
-import ast.Statement;
+import entities.Image;
+import visitor.Acceptor;
+import visitor.GifComicVisitor;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class GifComicProgram {
+public class GifComicProgram extends Acceptor {
     private String name;
     private ArrayList<Statement> statements;
     private HashMap<String, Image> imageMap; // maybe can get rid of image and reference a ImageBuffer directly?
@@ -26,5 +29,10 @@ public class GifComicProgram {
 
     public HashMap<String, Image> getImageMap() {
         return this.imageMap;
+    }
+
+    @Override
+    public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
+        return v.visit(context,this);
     }
 }

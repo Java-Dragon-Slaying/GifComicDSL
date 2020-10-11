@@ -1,5 +1,34 @@
 Add entries to this file summarising each project milestone. Don't forget that these need to have been discussed with your TA before the milestone deadline; also, remember to commit and push them by then!
 
+# MILESTONE 4
+
+## Status of implementation
+Completed issues:
+* [Parser](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/6)
+* [Tokenizer](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/5)
+* [General Framework of Project](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/7)
+* [First User Study](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/9)
+* [EBNF](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/3)
+* [UI Implementation Discussion](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/14)
+    - We've decided not to go ahead with a UI since it is not required and could be a lot of work
+    - Our program will instead take a text file as input and create an html file to display the gifs
+* [Milestone 2](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/15)
+* [Sprint Planning Session 1](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/4)
+* [Brainstorm Functionality](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/2)
+
+## Plans for final user study
+Each group member will conduct their own user study and then mid-next week we will have a meeting to share our ideas.
+
+## Planned timeline for the remaining days
+To be completed by October 12: 
+* [Validator](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/10)
+* [Animator](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/18)
+* [Renderer](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/17)
+      
+To be completed by October 16: 
+* [Final User Study](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/13)
+* [Video](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/issues/11)
+
 # MILESTONE 3
 - Notes from the first user study and design changes are in "User Study 1.txt"
 - EBNF and sample input are in "EBNF.txt"

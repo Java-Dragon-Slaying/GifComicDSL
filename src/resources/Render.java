@@ -1,5 +1,5 @@
 package resources;
-import entities.GifComicProgram;
+import ast.GifComicProgram;
 
 import java.util.ArrayList;
 import java.util.List;

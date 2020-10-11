@@ -1,6 +1,7 @@
 package ast;
 
 import entities.Coordinate;
+import visitor.GifComicVisitor;
 
 import java.util.ArrayList;
 
@@ -18,5 +19,10 @@ public class CreatePanel extends Statement {
         this.text = text;
         this.fontsize = fontsize;
         this.panelSteps = panelSteps;
+    }
+
+    @Override
+    public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
+        return v.visit(context,this);
     }
 }
