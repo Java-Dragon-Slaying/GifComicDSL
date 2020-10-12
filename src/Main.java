@@ -1,5 +1,4 @@
 import ast.GifComicProgram;
-import resources.Render;
 
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
@@ -20,7 +19,7 @@ public class Main {
             throw new RuntimeException("Validation failed, reasons: \n" + validationError);
         }
 
-        Render renderer = new Render(program.getName());
-        program.accept(null, renderer);
+        Evaluator evaluator = new Evaluator(program.getName());
+        program.accept(null, evaluator);
     }
 }

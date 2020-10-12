@@ -1,78 +1,48 @@
 package resources;
-import ast.*;
-import visitor.GifComicVisitor;
 
+import entities.Panel;
+
+import javax.imageio.ImageIO;
+import javax.imageio.stream.FileImageOutputStream;
+import javax.imageio.stream.ImageOutputStream;
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
-public class Render implements GifComicVisitor {
+public final class Render {
 
-    String outFile;
-    PrintWriter html;
-    private HashMap<String, BufferedImage> imageMap;
-    private ImageLibrary imageLibrary;
-
-    public Render(String outFile) throws FileNotFoundException, UnsupportedEncodingException {
-        this.html = new PrintWriter(outFile+".html", "UTF-8");
-        this.imageMap = new HashMap<>();
-        this.imageLibrary = new ImageLibrary();
+    public static BufferedImage frame(Panel panel){
+        return panel.background;
     }
 
-    @Override
-    public Object visit(Object context, GifComicProgram gfc) {
-        for(Statement s: gfc.getStatements()){
-            s.accept(context, this);
+    public static void animateAndSave(ArrayList<BufferedImage> frames, String filePath) {
+
+        try {
+            ImageOutputStream output = new FileImageOutputStream(new File(filePath));
+            GifSequenceWriter writer = new GifSequenceWriter(output, frames.get(0).getType(), 500, true);
+
+            for(BufferedImage img: frames) {
+                writer.writeToSequence(img);
+            }
+
+            writer.close();
+            output.close();
+
+        } catch (IOException e){
+            throw new RuntimeException(e);
         }
-        return null;
     }
 
-    @Override
-    public Object visit(Object context, CreateImage createImage) {
-        BufferedImage img;
-        img = imageLibrary.getImage(createImage.getSource());
-        imageMap.put(createImage.getName(), img);
-        return null;
+    public static BufferedImage resizeBackground(BufferedImage img, int x, int y){
+        Image tmp = img.getScaledInstance(x, y, Image.SCALE_SMOOTH);
+        BufferedImage resized = new BufferedImage(x, y, BufferedImage.TYPE_INT_ARGB);
+        resized.getGraphics().drawImage(tmp, 0, 0, null);
+        return resized;
     }
 
-    @Override
-    public Object visit(Object context, AddImage addImage) {
-        return null;
-    }
 
-    @Override
-    public Object visit(Object context, MoveImage m) {
-        return null;
-    }
 
-    @Override
-    public Object visit(Object context, PanelStep ps) {
-        return null;
-    }
-
-    @Override
-    public Object visit(Object context, RemoveImage r) {
-        return null;
-    }
-
-    @Override
-    public Object visit(Object context, CreatePanel createPanel) {
-        return null;
-    }
-
-    // class for rendering the comic! iterate through the panels and then return a list of GIFs
-    public List<Object> renderComic(String output) {
-
-        return new ArrayList<Object>();
-    }
-
-    // create an html file called name, populate with the given GIFs, and save iut at the given filepath
-    public void renderHtml(String name, String output_filepath, List<Object> output) {
-
-    }
 
 }

@@ -1,6 +1,8 @@
 comic my_comic
-  use image microphone as mic;
+  use image sky_blue_background as sky;
   use image canada as flag;
-  create panel (100,100) background flag text fontsize 20 "whatssupp"
-    add mic (10,10),
-    move mic (20,10)
+  use image snowboarder as jerry;
+  create panel (1500,1500) background sky text fontsize 20 "whatssupp"
+    add flag (750,750)
+  create panel (500,500) background flag
+    add jerry (250,250)

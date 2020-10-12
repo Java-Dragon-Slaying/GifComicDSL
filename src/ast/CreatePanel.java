@@ -6,15 +6,15 @@ import visitor.GifComicVisitor;
 import java.util.ArrayList;
 
 public class CreatePanel extends Statement {
-    Coordinate coordinate;
+    Coordinate dimensions;
     String background;
     String text;
     Integer fontsize;
     ArrayList<ArrayList<PanelStep>> panelSteps;
 
-    public CreatePanel(String coordinate, String background, String text, Integer fontsize,
+    public CreatePanel(String dimension, String background, String text, Integer fontsize,
                        ArrayList<ArrayList<PanelStep>>  panelSteps) {
-        this.coordinate = new Coordinate(coordinate);
+        this.dimensions = new Coordinate(dimension);
         this.background = background;
         this.text = text;
         this.fontsize = fontsize;
@@ -25,8 +25,8 @@ public class CreatePanel extends Statement {
         return panelSteps;
     }
 
-    public Coordinate getCoordinate() {
-        return coordinate;
+    public Coordinate getDimensions() {
+        return dimensions;
     }
 
     public String getBackground() {

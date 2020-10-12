@@ -14,7 +14,22 @@ public class ImageLibrary {
         // add checks for making sure the image source is in the map (in renderer when creating image objects)
 
         images.put("microphone", "./src/resources/images_lib/1F3A4.png");
-        images.put("canada", "./src/resources/images_lib/1F3A4.png");
+        images.put("canada", "./src/resources/images_lib/1F1E8-1F1E6.png");
+        images.put("movie_camera", "./src/resources/images_lib/1F3A5.png");
+        images.put("bullseye", "./src/resources/images_lib/1F3AF.png");
+        images.put("eight_ball", "./src/resources/images_lib/1F3B1.png");
+        images.put("die", "./src/resources/images_lib/1F3B2.png");
+        images.put("music_notes_1", "./src/resources/images_lib/1F3B5.png");
+        images.put("music_notes_2", "./src/resources/images_lib/1F3B6.png");
+        images.put("basketball", "./src/resources/images_lib/1F3C0.png");
+        images.put("snowboarder", "./src/resources/images_lib/1F3C2.png");
+        images.put("runner", "./src/resources/images_lib/1F3C3.png");
+        images.put("surfer", "./src/resources/images_lib/1F3C4.png");
+        images.put("trophy", "./src/resources/images_lib/1F3C6.png");
+        images.put("horse_rider", "./src/resources/images_lib/1F3C7.png");
+        images.put("football", "./src/resources/images_lib/1F3C8.png");
+        images.put("mountain", "./src/resources/images_lib/1F3D4.png");
+        images.put("sky_blue_background", "./src/resources/images_lib/1F3F3-FE0F-200D-1F7E6.png");
 
     }
 
@@ -36,5 +51,4 @@ public class ImageLibrary {
         }
         return img;
     }
-
 }

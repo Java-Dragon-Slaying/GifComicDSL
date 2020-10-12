@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Validator implements GifComicVisitor <Set<String>, String> {
     Integer panelX = 0;
     Integer panelY = 0;
-    Integer maxPanelSize = 500;
+    Integer maxPanelSize = 1500;
     Integer maxFontsSize = maxPanelSize / 4;
     Set<String> panelContext = new HashSet<>();
 
@@ -34,8 +34,8 @@ public class Validator implements GifComicVisitor <Set<String>, String> {
     @Override
     public String visit(Set<String> context, CreatePanel createPanel) {
         String validationError = "";
-        panelX = createPanel.getCoordinate().getX();
-        panelY = createPanel.getCoordinate().getY();
+        panelX = createPanel.getDimensions().getX();
+        panelY = createPanel.getDimensions().getY();
         panelContext = new HashSet<>();
 
         if(!createPanel.getText().equals("") && createPanel.getFontsize() > maxFontsSize){
