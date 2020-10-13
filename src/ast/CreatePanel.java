@@ -14,7 +14,7 @@ public class CreatePanel extends Statement {
 
     public CreatePanel(String dimension, String background, String text, Integer fontsize,
                        ArrayList<ArrayList<PanelStep>>  panelSteps) {
-        this.dimensions = new Coordinate(dimension);
+        this.dimensions = new Coordinate(Coordinate.fromString(dimension)[0], Coordinate.fromString(dimension)[1]);
         this.background = background;
         this.text = text;
         this.fontsize = fontsize;

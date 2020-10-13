@@ -27,9 +27,8 @@ public class Panel {
         this.frames = new ArrayList<>();
         this.text = text;
         this.fontSize =  fontSize > 0 ? fontSize : 12;
-        this.textPosition =  new Coordinate("(0,0)");
-        textPosition.setX(background.getWidth()/5);
-        textPosition.setY(background.getHeight()/5);  // default values are near upper left for first char in string
+        this.textPosition =  new Coordinate(background.getWidth()/5, background.getHeight()/5);
+         // default values are near upper left for first char in string
         this.imageLayers = new LinkedHashMap<>();
     }
 
@@ -69,6 +68,10 @@ public class Panel {
 
     public void addImage(AddImage add) {
         imageLayers.put(add.getName(), add.getPosition());
+    }
+
+    public void moveImage(String name, Coordinate coordinate){
+        imageLayers.put(name, coordinate);
     }
 
     public void removeImage(RemoveImage remove) {

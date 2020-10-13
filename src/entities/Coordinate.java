@@ -4,10 +4,9 @@ public class Coordinate {
     int x;
     int y;
 
-    public Coordinate(String coordinate) {
-        String[] coordinates = coordinate.split("[\\(,\\)]");
-        this.x = Integer.parseInt(coordinates[1]);
-        this.y = Integer.parseInt(coordinates[2]);
+    public Coordinate(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public void setX(Integer x) {
@@ -24,6 +23,13 @@ public class Coordinate {
 
     public Integer getY() {
         return this.y;
+    }
+
+    public static int[] fromString(String coord_str){
+        String[] coordinates = coord_str.split("[\\(,\\)]");
+        int xi = Integer.parseInt(coordinates[1]);
+        int yi = Integer.parseInt(coordinates[2]);
+        return new int[]{xi, yi};
     }
 
 }

@@ -1,4 +1,5 @@
 package resources;
+// accesed @ https://web.archive.org/web/20191226041038/elliot.kroo.net/software/java/GifSequenceWriter/GifSequenceWriter.java
 //
 //  GifSequenceWriter.java
 //

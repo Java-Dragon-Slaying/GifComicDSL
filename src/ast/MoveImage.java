@@ -11,7 +11,7 @@ public class MoveImage extends PanelStep {
     public MoveImage(String movement, String imageName, String position) {
         this.movement = movement;
         this.name = imageName;
-        this.position = new Coordinate(position);
+        this.position = new Coordinate(Coordinate.fromString(position)[0], Coordinate.fromString(position)[1]);
     }
 
     public String getName() {

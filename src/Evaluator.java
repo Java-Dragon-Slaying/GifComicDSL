@@ -1,5 +1,6 @@
 import ast.*;
 import entities.Coordinate;
+import entities.MovementLibrary;
 import entities.Panel;
 import resources.ImageLibrary;
 import resources.Render;
@@ -10,9 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Set;
 
 public class Evaluator implements GifComicVisitor <Panel, Panel> {
 
@@ -20,6 +19,7 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
     PrintWriter html;
     private HashMap<String, BufferedImage> imageMap;
     private ImageLibrary imageLibrary;
+    private MovementLibrary movementLibrary;
     int panelNum;
 
     public Evaluator(String outFile) throws FileNotFoundException, UnsupportedEncodingException {
@@ -27,6 +27,7 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
         this.html = new PrintWriter("output/"+outFile+".html", "UTF-8");
         this.imageMap = new HashMap<>();
         this.imageLibrary = new ImageLibrary();
+        this.movementLibrary = new MovementLibrary();
         this.panelNum= 0;
     }
 
@@ -76,18 +77,23 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
             panel.addImage(add);
         }
         panel.addFrame(Render.frame(panel, imageMap));
-        return panel;
+        return null;
     }
 
     @Override
     public Panel visit(Panel panel, MoveImage m) {
-        ArrayList<PanelStep> adds = panel.getCurrentEval();
-        return panel;
+        ArrayList<MoveImage> moves = new ArrayList<>();
+        for(PanelStep ps: panel.getCurrentEval()){
+            MoveImage move = (MoveImage) ps;
+            moves.add(move);
+        }
+        movementLibrary.generateMovement(panel, moves, imageMap);
+        return null;
     }
 
     @Override
     public Panel visit(Panel panel, PanelStep ps) {
-        return panel;
+        return null;
     }
 
     @Override
@@ -97,7 +103,7 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
             panel.removeImage(remove);
         }
         panel.addFrame(Render.frame(panel, imageMap));
-        return panel;
+        return null;
     }
 
 }
