@@ -30,6 +30,12 @@ public class ImageLibrary {
         images.put("football", "./src/resources/images_lib/1F3C8.png");
         images.put("mountain", "./src/resources/images_lib/1F3D4.png");
         images.put("sky_blue_background", "./src/resources/images_lib/1F3F3-FE0F-200D-1F7E6.png");
+        images.put("champagne", "./src/resources/images_lib/1F37E.png");
+        images.put("shhh", "./src/resources/images_lib/1F92B.png");
+        images.put("angry", "./src/resources/images_lib/1F92C.png");
+        images.put("cover_mouth", "./src/resources/images_lib/1F92D.png");
+        images.put("vomit", "./src/resources/images_lib/1F92E.png");
+
 
     }
 

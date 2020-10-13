@@ -4,5 +4,8 @@ comic my_comic
   use image snowboarder as jerry;
   create panel (1500,1500) background sky text fontsize 20 "whatssupp"
     add flag (750,750)
-  create panel (500,500) background flag
     add jerry (250,250)
+    remove jerry
+  create panel (500,500) background flag text "oh Canada!"
+    add jerry (250,250)
+    add sky (250,250)

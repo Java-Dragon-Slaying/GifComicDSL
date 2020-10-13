@@ -2,6 +2,8 @@ package visitor;
 
 import ast.*;
 
+import java.util.ArrayList;
+
 public interface GifComicVisitor<C,T> {
     T visit(C context, AddImage addImage);
     T visit(C context, GifComicProgram gfc);

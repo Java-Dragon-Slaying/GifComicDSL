@@ -86,7 +86,7 @@ public class Parser {
             tokenizer.getNext();
             fontsize = Integer.parseInt(tokenizer.getAndCheckNext(NUM));
         }
-        String text = tokenizer.getAndCheckNext("[\\w]*");
+        String text = tokenizer.getAndCheckNext("^[a-zA-Z0-9_!? ]*");
         ArrayList<ArrayList<PanelStep>> panelSteps = new ArrayList<>();
         while (tokenizer.checkToken("add") || tokenizer.checkToken(MOVEMENTS) || tokenizer.checkToken("remove")) {
             if (tokenizer.checkToken("add")) {

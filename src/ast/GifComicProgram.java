@@ -1,6 +1,5 @@
 package ast;
 
-import entities.Image;
 import visitor.Acceptor;
 import visitor.GifComicVisitor;
 
