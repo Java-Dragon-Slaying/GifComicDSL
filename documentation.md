@@ -35,9 +35,11 @@ Every Gif Comic program needs to begin with creating a comic. The syntax is as s
 ## Declaring Images 
 
 ***Syntax***<br>
-`use image <image name from library> as <variable name> (Optional) ;`
+`use image <image name from library> as <variable name> ;(semi-colon optional)`
 
-***Example***<br>
+***Example (both are valid)***<br>
+`use image tall_guy as bob`
+
 `use image tall_guy as bob;`
 
 Before creating a panel and using an image within it, the *image must be declared outside of the panel first*. This documentation also contains an [Image Library](#image-library) from which the user can find most images they are looking for. Once the user has decided an image from the [Image Library](#image-library), place it after `image` and before `as`, as indicated above in the syntax. Next, the user must decide a name for this generic image before they are able to add this image within a panel. Optionally, a semicolon may be added at the end of the statement for better user readability. 
@@ -46,26 +48,39 @@ Before creating a panel and using an image within it, the *image must be declare
 ## Creating a Panel
 
 ***Syntax***<br>
-`create panel <size> background <variable name of image> (Optional) text fontsize <fontsize> <text>`
+`create panel <size> background <variable name of image to use as background>`
 
-***Example***<br>
+Optionally add a text header using `text <text>`
+
+Or add a text header with a specific font size using `text fontsize <fontsize> <text>`
+
+***Examples***<br>
+`create panel (100,100) background forest`
+
+`create panel (100,100) background forest text "Good Morning"`
+
 `create panel (100,100) background forest text fontsize 10 "Good Morning"`
 
-To create a panel, size must be provided as an x,y coordinate. <!-- we may want to elaborate on the valid values of the x,y coordinates here too --> Then, a background must be set using the variable name of an image declared outside of the panel. Optionally, the user may add text to the panel, which will appear in the top right corner of the panel <!-- where do we want to place the text on the panel, will it interfere with the placement of the images? --> Fontsize (an integer between 1 and 30 <!-- do we want to place a limit on fontsize depending on panel size? -->) and the actual text must then be provided next, as shown in the syntax and example above.
+To create a panel, size must be provided as an x,y coordinate. <!-- we may want to elaborate on the valid values of the x,y coordinates here too --> Then, a background must be set using the variable name of an image declared outside of the panel. Optionally, the user may add a text header to the panel, which will appear in the top right corner of the panel. <!-- where do we want to place the text on the panel, will it interfere with the placement of the images? --> An optional fontsize (an integer between 1 and 30 <!-- do we want to place a limit on fontsize depending on panel size? -->) can also be added, as shown in the syntax and example above.
 
 ## Adding Images within a Panel
 
 ***Syntax***<br>
-`add <variable name of image> <position> (Optional) (, | ;)`
+`add <variable name of image> <position> , (comma optional)`
 
 ***Example***<br>
-`add bob (50, 100)`
+`add bob (50,100)`
+
+`add bob (50,100),`
 
 To add an image within a panel, *it must first have been declared outside of the panel (see [Declaring Images](#declaring-images))*. Once declared, the image can be added into the panel using the variable name of the image followed by a position (in x,y coordinates <!-- we may want to elaborate on the valid values of the x,y coordinates here too -->). Position must be within the coordinates of the panel. Optionally, a comma may be added at the end of the statement if the user intends to add more statements within the panel. If this statement is the last statement in the panel, a semi-colon may also be optionally added. The option to use commas and semicolons exists for better readability for users.
 
 ## Moving Images within a Panel
+UPDATE THIS WITH THE ACTUAL LIST OF MOVEMENTS
 
-***Syntax***<br>
+UPDATE OPTIONAL DESCRIPTION TO MATCH OTHER SECTIONS
+
+<!-- ***Syntax***<br>
 (a) `move`: `move <variable name of image> <position> (Optional) (, | ;)` <br>
 (b) `run`: `run <variable name of image> <position> (Optional) (, | ;)` <br>
 (c) `jump`: `jump <variable name of image> <position> (Optional) (, | ;)` <br>
@@ -76,15 +91,17 @@ To add an image within a panel, *it must first have been declared outside of the
 (c) `jump`: `move alice (10, 40);`<br>
 
 There are 3 types of movements within a panel: `move`, `run`, and `jump`. `move` mimicks a walking notion and requires the variable name of the image and a position to move/walk it to. `run` mimicks a running notion, so it is faster than move and also requires the variable name of the image, along with a position to run it to. `jump` mimicks a quick jumping notion and, you guessed it, requires the variable name of the image and a position to jump it to. Each movement statement may optionally end with a comma if more statements within the panel succeed it, or end with a semi-colon if it is the last statement within the panel. *Note that an image cannot be move, run, or jump if it is not first declared outside the panel and then added within the panel.*
-
+-->
 
 ## Removing Images within a Panel
 
 ***Syntax***<br>
-`remove <variable name of image>`
+`remove <variable name of image> , (optional comma)`
 
 ***Example***<br>
 `remove bob`
+
+`remove bob,`
 
 To remove an image from a panel, perhaps after doing some movements with it, follow the syntax above. 
 
@@ -92,18 +109,20 @@ To remove an image from a panel, perhaps after doing some movements with it, fol
 ## Supported Conditional Logic
 
 ***Syntax***<br>
-`<add | type of movement> <variable name of image> <position> (Optional) AND <type of movement> <variable name of image> <position> (Optional) AND ...`
+<!-- `<add | type of movement> <variable name of image> <position> (Optional) AND <type of movement> <variable name of image> <position> (Optional) AND ...` -->
+`<image declaration> AND <image declaration of the same type> AND <more declarations of the same type as needed> ...`
 
 ***Examples***<br>
 (a) `move bob (20, 10) AND run kate (70, 30),` <br>
 (b) `add alice (45, 10) AND jump bob (20, 50)` <br>
 
-The conditional logical operator `AND` is supported within, *and only within*, the statements of a panel. Using the `AND` operator, multiple images can be added at once or multiple movements can be done at once. <!-- is it at once or in very quick succession? -->
+The conditional logical operator `AND` is supported within, *and only within*, the statements of a panel that are of the same type. Using `AND` between an add and move statement, for example, is invalid. Using `AND` between two adds or between two moves is valid. Using the `AND` operator, multiple images can be added at once or multiple movements can be done at once, instead of each declaration appearing sequentially. <!-- is it at once or in very quick succession? -->
 
 
 
 ## Optional Grammar
-
+DO WE NEED THIS? IT'S ALREADY WELL EXPLAINED ABOVE
+<!--
 ***Syntax***<br>
 `,` | `;`
 
@@ -120,10 +139,10 @@ As mentioned earlier within the Gif Comic DSL documentation, commas and semicolo
 2. After the last line within a panel<br>
 
 Recommended convention for adding commas is after every statement within a panel, provided there are more statements succeeding it. 
-
+-->
 ## Details about Gif Loop
 
-Gif looping within the panels is done automatically. User does not need to explicitly loop each panel. Each panel, then, is a gif and the total number of panels, each containing their own gifs, make up the comic. Multiple comics cannot be created within a single input file, but up to x <!-- max num of panels --> panels may be added within a comic.
+Gif looping within the panels is done automatically; the user does not need to explicitly loop each panel. Each panel is a gif, and the set of all panels makes up the comic. A single comic can be created per input file, with up to x <!-- max num of panels --> panels contained within it.
 
 
 ## DSL Demo
