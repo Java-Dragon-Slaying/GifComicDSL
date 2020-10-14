@@ -10,7 +10,6 @@ Welcome to **Gif Comic DSL** (Domain Specific Language) Documentation! You can u
 * [Moving Images within a Panel](#moving-images-within-a-panel)
 * [Removing Images within a Panel](#removing-images-within-a-panel)
 * [Supported Conditional Logic](#supported-conditional-logic)
-* [Optional Grammar: Semicolons and Commas](#optional-grammar)
 * [Details about Gif Loop](#details-about-gif-loop)
 * [DSL Demo](#dsl-demo)
 * [Support](#support)
@@ -140,3 +139,25 @@ If you would like any support with our Gif Comic DSL, please contact any of the 
 ## Image Library
 
 <!-- insert image library enum here, mapping the generic term for the image to the actual image itself, is this possible? -->
+microphone: ![mic](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3A4.png) <br>
+canada: ![canada](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F1E8-1F1E6.png) <br>
+movie_camera: ![die](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3A5.png) <br>
+bullseye: ![die](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3AF.png) <br>
+eight_ball: ![die](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3B1.png) <br>
+die: ![die](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3B2.png) <br>
+music_notes_1: ![music1](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3B5.png) <br>
+music_notes_2: ![music2](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3B6.png) <br>
+basketball: ![bball](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3C0.png) <br>
+snowboarder: ![snowboarder](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3C2.png) <br>
+runner: ![runner](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3C3.png) <br>
+surfer: ![surfer](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3C4.png) <br>
+trophy: ![trophy](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3C6.png) <br>
+horse_rider: ![horse_rider](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3C7.png) <br>
+football: ![football](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3C8.png) <br>
+mountain: ![mountain](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3D4.png) <br>
+sky_blue_background: ![blue_background](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F3F3-FE0F-200D-1F7E6.png) <br>
+champagne: ![champagne](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F37E.png) <br>
+shhh: ![shhh](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F92B.png) <br>
+angry: ![angry](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F92C.png) <br>
+cover_mouth: ![cover_mouth](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F92D.png) <br>
+vomit: ![vomit](https://github.students.cs.ubc.ca/cpsc410-2020w-t1/cpsc410_project1_team2/blob/master/images_lib/1F92E.png) <br>
