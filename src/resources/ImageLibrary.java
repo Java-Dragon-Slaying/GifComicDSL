@@ -10,9 +10,6 @@ public class ImageLibrary {
 
     public ImageLibrary() {
         this.images = new HashMap<>();
-        // add images that we're keeping here
-        // add checks for making sure the image source is in the map (in renderer when creating image objects)
-
         images.put("microphone", "./src/resources/images_lib/1F3A4.png");
         images.put("canada", "./src/resources/images_lib/1F1E8-1F1E6.png");
         images.put("movie_camera", "./src/resources/images_lib/1F3A5.png");
@@ -35,8 +32,6 @@ public class ImageLibrary {
         images.put("angry", "./src/resources/images_lib/1F92C.png");
         images.put("cover_mouth", "./src/resources/images_lib/1F92D.png");
         images.put("vomit", "./src/resources/images_lib/1F92E.png");
-
-
     }
 
     public boolean hasImage(String img){
