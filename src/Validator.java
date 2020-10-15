@@ -105,10 +105,7 @@ public class Validator implements GifComicVisitor <Set<String>, String> {
     }
 
     private Boolean outOfBounds(Integer posX, Integer posY, Integer limitX, Integer limitY){
-        if(posX > limitX || posY > limitY){
-            return true;
-        }
-        return false;
+        return (posX > limitX || posY > limitY);
     }
 
 }
