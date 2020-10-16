@@ -4,4 +4,10 @@ Feedback from final user studies:
 
 Potential changes based on above feedback:
 For the sake of time, we're not implementing these changes but they're good ideas for further improvement.
-- allow spaces in coordinates (we would need to change the tokenizer to allow the space and update the parser to use the new tokens)
+- allow spaces in coordinates (we would need to modify the tokenizer to allow the space and update the parser to use the new tokens)
+
+Reflection on effectiveness of language:
+-
+
+Reflection/evaluation of project:
+-
