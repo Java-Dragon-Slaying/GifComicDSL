@@ -1,13 +1,7 @@
 comic my_comic
-  use image tall_guy as "astrozhu";
-  use image tall_guy as "bill";
-  use image class_room as "classroom";
-  create panel (0,0) background classroom text fontsize 20 "whatssupp"
-    add astrozhu (10,10),
-    add bill (30,10),
-    move astro (20,10),
-    move astro (30,10) AND move bill (10,10),
-    remove bill;
-  create panel (200,0) background galaxy;
-
-
+  use image sky_blue_background as sky;
+  use image canada as flag;
+  use image snowboarder as jerry;
+  create panel (500,500) background flag text fontsize 20 "oh Canada!"
+    add jerry (100,200)
+    jump jerry (400,200)

@@ -9,7 +9,16 @@ public class AddImage extends PanelStep {
 
     public AddImage(String imageName, String position) {
         this.name = imageName;
-        this.position = new Coordinate(position);
+        int[] coords = Coordinate.fromString(position);
+        this.position = new Coordinate(coords[0], coords[1]);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Coordinate getPosition() {
+        return position;
     }
 
     @Override
