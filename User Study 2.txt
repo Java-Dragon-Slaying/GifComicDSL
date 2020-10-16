@@ -1,0 +1,7 @@
+Feedback from final user studies:
+- users naturally put spaces between numbers in coordinates
+- importing images is not intuitive to non-programmers (easy to catch on after being told how to do it though)
+
+Potential changes based on above feedback:
+For the sake of time, we're not implementing these changes but they're good ideas for further improvement.
+- allow spaces in coordinates (we would need to change the tokenizer to allow the space and update the parser to use the new tokens)
