@@ -87,7 +87,7 @@ public class Validator implements GifComicVisitor <Set<String>, String> {
             return "trying to move image " + imgName + ", which is not added to panel\n";
         }
         Coordinate imgXY = m.getPosition();
-        //Check image out of panel bounds (may allow?)
+        //Check image out of panel bounds
         if(outOfBounds(imgXY.getX(), imgXY.getY(), panelX, panelY)){
             return "trying to move image out of bounds\n";
         }
@@ -105,10 +105,7 @@ public class Validator implements GifComicVisitor <Set<String>, String> {
     }
 
     private Boolean outOfBounds(Integer posX, Integer posY, Integer limitX, Integer limitY){
-        if(posX > limitX || posY > limitY){
-            return true;
-        }
-        return false;
+        return (posX > limitX || posY > limitY);
     }
 
 }
