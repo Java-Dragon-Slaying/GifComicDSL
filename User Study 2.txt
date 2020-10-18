@@ -1,13 +1,23 @@
 Feedback from final user studies:
 - users naturally put spaces between numbers in coordinates
 - importing images is not intuitive to non-programmers (easy to catch on after being told how to do it though)
+- the output file looks a little primitive but captures all of our requirements
+- all users produced the same (if not very similar in terms of image/panel naming and optional characters) code as we did for the desired output
 
 Potential changes based on above feedback:
 For the sake of time, we're not implementing these changes but they're good ideas for further improvement.
 - allow spaces in coordinates (we would need to modify the tokenizer to allow the space and update the parser to use the new tokens)
+- update the html file to have more styling so the output looks more polished
 
 Reflection on effectiveness of language:
--
+Overall, our user studies showed that our language design is easy to learn and use (especially for those with some programming experience).
+The idea of importing and assigning local names to images was new to those without prior programming experience but they caught on quickly without struggling. Referring to the documentation and sample inputs was helpful for these users to get started.
+While users found our language effective to create gif comics, some areas of improvement include allowing spaces after the comma in coordinates and updating the html/css so the final output looks more polished.
+Unfortunately, we don't have enough time before the due date to go ahead and fully implement these changes. They are good ideas to keep in mind for the future though!
 
 Reflection/evaluation of project:
--
+This project went very well, both in terms of the final result and the inner workings of the team.
+     - We bounced ideas off of each other in a friendly way and were able to come to a consensus on the best way forward
+     - We were able to shift responsibilities to accommodate external responsibilities (families, other course assignments/midterms, job interviews...) while keeping the division of work fairly even among the five of us
+     - We took feedback from each other and from outside users without offense and did not have any internal conflicts
+     - We are proud of our final result and that the fact that our "harshest" feedback was to allow a space inside the coordinates (that's pretty good!)
