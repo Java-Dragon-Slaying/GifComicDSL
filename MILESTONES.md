@@ -1,5 +1,10 @@
 Add entries to this file summarising each project milestone. Don't forget that these need to have been discussed with your TA before the milestone deadline; also, remember to commit and push them by then!
 
+# FINAL SUBMISSION
+The results of our second user study, our reflection on the effectiveness of the language and our reflection on the project as a whole are in "User Study 2.txt"
+
+This is our [Final Video](https://drive.google.com/file/d/1BDOhJKj-kY1BUGlZrVPkdJoFUh5BovyR/view) (also submitted on Canvas).
+
 # MILESTONE 4
 
 ## Status of implementation
