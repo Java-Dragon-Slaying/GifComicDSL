@@ -1,5 +1,5 @@
 import ast.*;
-import entities.GifComicProgram;
+import ast.GifComicProgram;
 import entities.MovementLibrary;
 
 import java.security.InvalidParameterException;
@@ -57,11 +57,11 @@ public class Parser {
     private CreatePanel parseCreatePanel() {
         tokenizer.getNext(); // ignore "create"
         tokenizer.getAndCheckNext("panel");
-        String position = tokenizer.getAndCheckNext(COORDINATE);
+        String dimensions = tokenizer.getAndCheckNext(COORDINATE);
         tokenizer.getAndCheckNext("background");
         String background = tokenizer.getAndCheckNext(NAME);
         if (tokenizer.checkToken("text")) {
-            return parseCreateTextPanel(position, background);
+            return parseCreateTextPanel(dimensions, background);
         }
         ArrayList<ArrayList<PanelStep>> panelSteps = new ArrayList<>();
         while (tokenizer.checkToken("add") || tokenizer.checkToken(MOVEMENTS) || tokenizer.checkToken("remove")) {
@@ -74,7 +74,7 @@ public class Parser {
             }
         }
         // text, fontsize are default values (weren't given by user)
-        return new CreatePanel(position, background, "", 0, panelSteps);
+        return new CreatePanel(dimensions, background, "", 0, panelSteps);
     }
 
     // PANEL::= “panel” POSITION “background” NAME (TEXT)? ADD (ADD | MOVE | REMOVE)*
@@ -86,7 +86,7 @@ public class Parser {
             tokenizer.getNext();
             fontsize = Integer.parseInt(tokenizer.getAndCheckNext(NUM));
         }
-        String text = tokenizer.getAndCheckNext("[\\w]*");
+        String text = tokenizer.getAndCheckNext("^[a-zA-Z0-9_!? ]*");
         ArrayList<ArrayList<PanelStep>> panelSteps = new ArrayList<>();
         while (tokenizer.checkToken("add") || tokenizer.checkToken(MOVEMENTS) || tokenizer.checkToken("remove")) {
             if (tokenizer.checkToken("add")) {
