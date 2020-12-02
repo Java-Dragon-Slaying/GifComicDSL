@@ -1,0 +1,7 @@
+comic my_comic
+  use image sky_blue_background as sky;
+  use image canada as flag;
+  use image snowboarder as jerry;
+  create panel (500,500) background flag text fontsize 20 "oh Canada!"
+    add jerry (100,200)
+    jump jerry (400,200)
