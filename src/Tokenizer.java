@@ -19,11 +19,8 @@ public class Tokenizer {
     }
 
     private void tokenize() {
-        //1. Read whole program into single string, remove newlines
         String tokenizedProgram = inputProgram.replace("\n", "");
-        //2. Split the tokens
         tokens = tokenizedProgram.split("\\s+(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)");
-        //3. Remove the quote and ending comma and semicolon
         for (int i = 0; i < tokens.length; i++) {
             tokens[i] = tokens[i].replaceAll("\"", "");
             tokens[i] = tokens[i].replaceAll("\\;", "");
@@ -31,7 +28,6 @@ public class Tokenizer {
                 tokens[i] = tokens[i].substring(0, tokens[i].length() - 1);
             }
         }
-        //4. Trim whitespace around tokens
         for (int i = 0; i < tokens.length; i++) {
             tokens[i] = tokens[i].trim();
         }
@@ -66,7 +62,6 @@ public class Tokenizer {
     public String getAndCheckNext(String regex) {
         String n = getNext();
         if (!n.matches(regex)) {
-            //  TODO: change this to custom exception after implementing validator
             throw new RuntimeException("TOKENIZER: Expected something matching: " + regex + " but got: " + n);
         }
         System.out.println("matched: " + n + "  to  " + regex);

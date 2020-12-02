@@ -6,23 +6,20 @@ import resources.Render;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class MovementLibrary {
-    private final HashMap<String, String> movements; // right side links to movement code for rendering (update type)
+    private final HashSet<String> movements;
 
     public MovementLibrary() {
-        this.movements = new HashMap<>();
-
-        // need something in map to be able to run parser
-        movements.put("move", "test");
-        movements.put("jump", "test2");
-
-        // add actual movements here
+        this.movements = new HashSet<String>();
+        movements.add("move");
+        movements.add("jump");
     }
 
     public String getMovementsRegex() {
         String regex = "";
-        for (String m : movements.keySet()) {
+        for (String m : movements) {
             regex = regex + "|" + m;
         }
         regex = regex.substring(1);
@@ -38,39 +35,37 @@ public class MovementLibrary {
         int frames = 20;
         for (int i = 1; i <= frames; i++) {
             for (MoveImage move : moves) {
-                if (move.getMovement().equals("move")){
+                if (move.getMovement().equals("move")) {
                     move(panel, startCoords, frames, i, move);
-                } else if (move.getMovement().equals("jump")){
+                } else if (move.getMovement().equals("jump")) {
                     jump(panel, startCoords, frames, i, move);
                 }
             }
             panel.addFrame(Render.frame(panel, imageMap));
-            }
         }
+    }
 
     private void move(Panel panel, HashMap<String, Coordinate> startCoords, int frames, int i, MoveImage move) {
         int startX = startCoords.get(move.getName()).getX();
         int startY = startCoords.get(move.getName()).getY();
-        int incX = (move.getPosition().getX() - startX)/ frames;
-        int incY = (move.getPosition().getY() - startY)/ frames;
-        int nextX = startX + incX* i;
-        int nextY = startY + incY* i;
+        int incX = (move.getPosition().getX() - startX) / frames;
+        int incY = (move.getPosition().getY() - startY) / frames;
+        int nextX = startX + incX * i;
+        int nextY = startY + incY * i;
         panel.moveImage(move.getName(), new Coordinate(nextX, nextY));
     }
 
     private void jump(Panel panel, HashMap<String, Coordinate> startCoords, int frames, int i, MoveImage move) {
         int startX = startCoords.get(move.getName()).getX();
         int startY = startCoords.get(move.getName()).getY();
-        int incX = (move.getPosition().getX() - startX)/ frames;
-        int nextX = startX + incX* i;
-        int incY = (move.getPosition().getY() - startY)/ frames;
+        int incX = (move.getPosition().getX() - startX) / frames;
+        int nextX = startX + incX * i;
+        int incY = (move.getPosition().getY() - startY) / frames;
 
-        int maxJump = Math.abs(move.getPosition().getX() - startX)/2;
-        double currentJump = maxJump*Math.sin(i * Math.PI / 20);
+        int maxJump = Math.abs(move.getPosition().getX() - startX) / 2;
+        double currentJump = maxJump * Math.sin(i * Math.PI / 20);
 
-        int nextY = startY - (int) currentJump + incY* i;
+        int nextY = startY - (int) currentJump + incY * i;
         panel.moveImage(move.getName(), new Coordinate(nextX, nextY));
     }
-
-
 }

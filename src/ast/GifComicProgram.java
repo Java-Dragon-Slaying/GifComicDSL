@@ -4,7 +4,6 @@ import visitor.Acceptor;
 import visitor.GifComicVisitor;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class GifComicProgram extends Acceptor {
     private String name;
@@ -25,6 +24,6 @@ public class GifComicProgram extends Acceptor {
 
     @Override
     public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
-        return v.visit(context,this);
+        return v.visit(context, this);
     }
 }

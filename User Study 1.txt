@@ -6,10 +6,6 @@ Feedback from user studies:
 - how is the end of the header text known? Is everything between "text" and "fontsize" taken as the header?
 - what happens if images are added before they are defined? This looks valid but will the DSL crash?
 
-Feedback from TA:
-- add some looping/conditional logic statements to the language that the user can interact with
-- good that we have variables and EBNF sketched out
-
 Changes based on above feedback:
 - we are going to remove the required {} and replace them with the following:
     a) change {} around create statements to an optional ending ;
@@ -21,4 +17,3 @@ Changes based on above feedback:
 - we are going to require quotes around the header text so it is easier to differentiate the user's text and the following commands.
     "fontsize" is optional so using it to end the user's header wouldn't work if the user decides not to define the font size
 - disallowing images to be added to a panel before the image is named will be implemented in the validator.
-- there are no clear use cases for looping or conditional logic in our problem domain. We can consider adding them later if we have a lot of extra time...

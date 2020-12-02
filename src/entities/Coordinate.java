@@ -25,7 +25,7 @@ public class Coordinate {
         return this.y;
     }
 
-    public static int[] fromString(String coord_str){
+    public static int[] fromString(String coord_str) {
         String[] coordinates = coord_str.split("[\\(,\\)]");
         int xi = Integer.parseInt(coordinates[1]);
         int yi = Integer.parseInt(coordinates[2]);

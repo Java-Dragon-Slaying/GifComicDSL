@@ -13,7 +13,7 @@ public class CreatePanel extends Statement {
     ArrayList<ArrayList<PanelStep>> panelSteps;
 
     public CreatePanel(String dimension, String background, String text, Integer fontsize,
-                       ArrayList<ArrayList<PanelStep>>  panelSteps) {
+                       ArrayList<ArrayList<PanelStep>> panelSteps) {
         this.dimensions = new Coordinate(Coordinate.fromString(dimension)[0], Coordinate.fromString(dimension)[1]);
         this.background = background;
         this.text = text;
@@ -43,6 +43,6 @@ public class CreatePanel extends Statement {
 
     @Override
     public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
-        return v.visit(context,this);
+        return v.visit(context, this);
     }
 }

@@ -37,7 +37,6 @@ public class Parser {
         } else if (tokenizer.checkToken("create")) {
             return parseCreatePanel();
         } else {
-            //  TODO: change this to custom exception after implementing validator
             throw new InvalidParameterException("PARSER: unknown statement starting with token " + tokenizer.getNext());
         }
     }
@@ -81,7 +80,7 @@ public class Parser {
     // TEXT::= “text” (“fontsize” NUM)? """ (\w)+ """
     private CreatePanel parseCreateTextPanel(String position, String background) {
         tokenizer.getNext(); // ignore "text"
-        Integer fontsize = 0;
+        int fontsize = 0;
         if (tokenizer.checkToken("fontsize")) {
             tokenizer.getNext();
             fontsize = Integer.parseInt(tokenizer.getAndCheckNext(NUM));

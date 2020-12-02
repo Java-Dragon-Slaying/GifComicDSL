@@ -14,21 +14,17 @@ public class Panel {
     BufferedImage background;
     String text;
     Coordinate textPosition;
-    int fontSize; // should go in a config
+    int fontSize;
     ArrayList<PanelStep> currentEval;
     ArrayList<BufferedImage> frames;
     LinkedHashMap<String, Coordinate> imageLayers;
-
-    // may need to store default text color here as well?
-
 
     public Panel(BufferedImage background, String text, int fontSize) {
         this.background = background;
         this.frames = new ArrayList<>();
         this.text = text;
-        this.fontSize =  fontSize > 0 ? fontSize : 12;
-        this.textPosition =  new Coordinate(background.getWidth()/5, background.getHeight()/5);
-         // default values are near upper left for first char in string
+        this.fontSize = fontSize > 0 ? fontSize : 12;
+        this.textPosition = new Coordinate(background.getWidth() / 5, background.getHeight() / 5);
         this.imageLayers = new LinkedHashMap<>();
     }
 
@@ -48,17 +44,19 @@ public class Panel {
         return background;
     }
 
-    public LinkedHashMap<String, Coordinate> getImageLayers(){
+    public LinkedHashMap<String, Coordinate> getImageLayers() {
         return imageLayers;
     }
 
-    public void setCurrentEval(ArrayList<PanelStep> panelsteps){
+    public void setCurrentEval(ArrayList<PanelStep> panelsteps) {
         currentEval = panelsteps;
     }
 
-    public ArrayList<PanelStep> getCurrentEval(){return currentEval; }
+    public ArrayList<PanelStep> getCurrentEval() {
+        return currentEval;
+    }
 
-    public void addFrame(BufferedImage frame){
+    public void addFrame(BufferedImage frame) {
         frames.add(frame);
     }
 
@@ -70,7 +68,7 @@ public class Panel {
         imageLayers.put(add.getName(), add.getPosition());
     }
 
-    public void moveImage(String name, Coordinate coordinate){
+    public void moveImage(String name, Coordinate coordinate) {
         imageLayers.put(name, coordinate);
     }
 

@@ -23,6 +23,6 @@ public class AddImage extends PanelStep {
 
     @Override
     public <C, T> T accept(C context, GifComicVisitor<C, T> v) {
-        return v.visit(context,this);
+        return v.visit(context, this);
     }
 }

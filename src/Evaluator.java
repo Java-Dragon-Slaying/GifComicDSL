@@ -13,7 +13,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Evaluator implements GifComicVisitor <Panel, Panel> {
+public class Evaluator implements GifComicVisitor<Panel, Panel> {
 
     String outFile;
     PrintWriter html;
@@ -24,16 +24,16 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
 
     public Evaluator(String outFile) throws FileNotFoundException, UnsupportedEncodingException {
         this.outFile = outFile;
-        this.html = new PrintWriter("output/"+outFile+".html", "UTF-8");
+        this.html = new PrintWriter("output/" + outFile + ".html", "UTF-8");
         this.imageMap = new HashMap<>();
         this.imageLibrary = new ImageLibrary();
         this.movementLibrary = new MovementLibrary();
-        this.panelNum= 0;
+        this.panelNum = 0;
     }
 
     @Override
     public Panel visit(Panel panel, GifComicProgram gfc) {
-        for(Statement s: gfc.getStatements()){
+        for (Statement s : gfc.getStatements()) {
             s.accept(panel, this);
         }
         html.close();
@@ -47,6 +47,7 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
         imageMap.put(createImage.getName(), img);
         return null;
     }
+
     @Override
     public Panel visit(Panel context, CreatePanel createPanel) {
         BufferedImage background;
@@ -57,22 +58,23 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
         background = Render.resizeBackground(imageMap.get(createPanel.getBackground()), dim.getX(), dim.getY());
         panel = new Panel(background, createPanel.getText(), createPanel.getFontsize());
 
-        for(ArrayList<PanelStep> steps: createPanel.getPanelSteps()){
-            PanelStep first = steps.get(0); // relies on our grammar/parser enforcing that PanelSteps in array must be same type
+        for (ArrayList<PanelStep> steps : createPanel.getPanelSteps()) {
+            PanelStep first = steps.get(0); // relies on parser enforcing that PanelSteps in array must be same type
             panel.setCurrentEval(steps);
             first.accept(panel, this);
             panel.setCurrentEval(null);
         }
         String gifFile = outFile + panelNum + ".gif";
-        Render.animateAndSave(panel.getFrames(), "output/"+gifFile);
-        html.println("<div><img src=\""+gifFile+"\" alt=\"" + outFile + " panel " + panelNum + "\" style=\"margin-bottom:3cm;\"></div>");
+        Render.animateAndSave(panel.getFrames(), "output/" + gifFile);
+        html.println("<div><img src=\"" + gifFile + "\" alt=\"" + outFile + " panel " + panelNum + "\" style=\"margin" +
+                "-bottom:3cm;\"></div>");
         panelNum++;
         return null;
     }
 
     @Override
     public Panel visit(Panel panel, AddImage addImage) {
-        for(PanelStep ps: panel.getCurrentEval()){
+        for (PanelStep ps : panel.getCurrentEval()) {
             AddImage add = (AddImage) ps;
             panel.addImage(add);
         }
@@ -83,7 +85,7 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
     @Override
     public Panel visit(Panel panel, MoveImage m) {
         ArrayList<MoveImage> moves = new ArrayList<>();
-        for(PanelStep ps: panel.getCurrentEval()){
+        for (PanelStep ps : panel.getCurrentEval()) {
             MoveImage move = (MoveImage) ps;
             moves.add(move);
         }
@@ -98,12 +100,11 @@ public class Evaluator implements GifComicVisitor <Panel, Panel> {
 
     @Override
     public Panel visit(Panel panel, RemoveImage r) {
-        for(PanelStep ps: panel.getCurrentEval()){
+        for (PanelStep ps : panel.getCurrentEval()) {
             RemoveImage remove = (RemoveImage) ps;
             panel.removeImage(remove);
         }
         panel.addFrame(Render.frame(panel, imageMap));
         return null;
     }
-
 }

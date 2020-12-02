@@ -34,14 +34,13 @@ public class ImageLibrary {
         images.put("vomit", "./src/resources/images_lib/1F92E.png");
     }
 
-    public boolean hasImage(String img){
+    public boolean hasImage(String img) {
         return images.containsKey(img);
     }
 
     public BufferedImage getImage(String img_name) {
-        String filepath;
         BufferedImage img;
-        if(hasImage(img_name)){
+        if (hasImage(img_name)) {
             try {
                 img = ImageIO.read(new File(images.get(img_name)));
             } catch (java.io.IOException e) {
